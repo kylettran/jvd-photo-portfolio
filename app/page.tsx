@@ -1,41 +1,48 @@
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <main>
 
       {/* HERO */}
-      <section className="flex flex-col justify-center items-center text-center px-6 py-32 bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900">
-        <h1 className="text-6xl font-bold mb-6 tracking-tight">
-          JVD Photography
-        </h1>
-        <p className="text-gray-400 text-xl max-w-xl">
+      <section className="text-center py-28 px-6 bg-gradient-to-b from-neutral-900 to-neutral-950">
+        <h1 className="text-6xl font-bold mb-6">JVD Photography</h1>
+        <p className="text-gray-400 text-lg">
           Timeless imagery crafted with intention and emotion.
         </p>
       </section>
 
-      {/* PORTFOLIO GRID */}
-      <section className="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {[1,2,3,4,5,6].map((num) => (
+      {/* 3x3 GALLERY */}
+      <section className="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+        {[
+          "/images/photo1.jpg",
+          "/images/photo2.jpg",
+          "/images/photo3.jpg",
+          "/images/photo4.jpg",
+          "/images/photo5.jpg",
+          "/images/photo6.jpg",
+          "/images/photo7.jpg",
+          "/images/photo8.jpg",
+          "/images/photo9.jpg",
+        ].map((src, index) => (
           <div
-            key={num}
-            className="aspect-[4/5] bg-neutral-800 rounded-2xl hover:scale-105 transition duration-300 shadow-lg"
-          />
+            key={index}
+            className="aspect-square overflow-hidden rounded-xl bg-neutral-800"
+          >
+            <img
+              src={src}
+              alt="portfolio"
+              className="w-full h-full object-cover hover:scale-105 transition duration-500"
+            />
+          </div>
         ))}
+
       </section>
 
-      {/* SOCIAL FOOTER */}
-      <footer className="mt-auto border-t border-neutral-800 py-12 text-center">
-
-        <div className="flex justify-center gap-10 text-gray-400 text-lg mb-6">
-          <a href="#" className="hover:text-white transition">Instagram</a>
-          <a href="#" className="hover:text-white transition">Facebook</a>
-          <a href="#" className="hover:text-white transition">Twitter</a>
-        </div>
-
-        <p className="text-gray-500 text-sm">
-          © 2026 JVD Photography
-        </p>
-
+      {/* FOOTER */}
+      <footer className="border-t border-neutral-800 py-10 text-center text-gray-500 text-sm">
+        © 2026 JVD Photography
       </footer>
+
     </main>
   )
 }
